@@ -1,13 +1,17 @@
 public class Programa {
 
-    static void main(String[] args) {
-        int n = 2; // Número total de filósofos
-        Jardin jardin = new Jardin(n);
+    static void main(String[] args) throws InterruptedException {
+        Jardin jardin = new Jardin();
 
+        Thread entrada = new HiloEntrada(jardin);
+        Thread salida = new HiloSalida(jardin);
 
-        for (int i = 0; i < n; i++) {
+        entrada.start();
+        salida.start();
 
-            new Personas(i, jardin).start();
-        }
+        entrada.join();
+        salida.join();
+
+        System.out.println("Personas finales: " + jardin.getTotalPersonas());
     }
 }
