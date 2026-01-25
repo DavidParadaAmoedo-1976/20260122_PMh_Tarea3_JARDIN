@@ -3,8 +3,8 @@ public class Programa {
     static void main(String[] args) throws InterruptedException {
         Jardin jardin = new Jardin();
 
-        Thread entrada = new HiloEntrada(jardin);
-        Thread salida = new HiloSalida(jardin);
+        Thread entrada = new PuertaEntrada(jardin);
+        Thread salida = new PuertaSalida(jardin);
 
         entrada.start();
         salida.start();

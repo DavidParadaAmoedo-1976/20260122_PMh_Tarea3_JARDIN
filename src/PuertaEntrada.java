@@ -1,21 +1,17 @@
 import java.util.Random;
 
-class HiloSalida extends Thread {
+class PuertaEntrada extends Thread {
     private Jardin jardin;
     Random rand = new Random();
 
-    public HiloSalida(Jardin jardin) {
+    public PuertaEntrada(Jardin jardin) {
         this.jardin = jardin;
     }
 
     public void run() {
         for (int i = 0; i < 100; i++) {
             rand.nextInt(100,1000);
-            try {
-                jardin.salir();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            jardin.entrar();
         }
     }
 }
