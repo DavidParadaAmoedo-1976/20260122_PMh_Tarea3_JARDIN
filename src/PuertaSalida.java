@@ -9,7 +9,8 @@ class PuertaSalida extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 100; i++) {
+//        while (true) {
+        for (int i = 0; i < 1000; i++) {
             rand.nextInt(100,1000);
             try {
                 jardin.salir();
