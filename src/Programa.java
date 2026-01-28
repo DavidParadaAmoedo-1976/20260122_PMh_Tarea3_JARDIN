@@ -9,9 +9,9 @@ public class Programa {
         entrada.start();
         salida.start();
 
-//        entrada.join();
-//        salida.join();
-//
-//        System.out.println("Personas finales: " + jardin.getTotalPersonas());
+        entrada.join();
+        salida.join();
+
+        System.out.println("Personas finales: " + jardin.getTotalPersonas());
     }
 }
