@@ -9,14 +9,19 @@ class PuertaSalida extends Thread {
     }
 
     public void run() {
-//        while (true) {
-        for (int i = 0; i < rand.nextInt(1,100); i++) {
-            rand.nextInt(100,1000);
+        int y = rand.nextInt(1, 1000);
+        for (int i = 0; i < y; i++) {
+            try {
+                sleep(rand.nextInt(10,100));
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 jardin.salir();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
         }
     }
 }
