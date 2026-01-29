@@ -1,7 +1,6 @@
-// Clase principal que contiene el punto de inicio del programa
 public class Programa {
 
-    // Método main donde comienza la ejecución
+    // inicia una variable booleana para indicar cuando termina el hilo de las personas que enytraron
     public static boolean personasEntraron = true;
     static void main(String[] args) throws InterruptedException {
 
@@ -18,7 +17,7 @@ public class Programa {
 
         // Se espera a que ambos hilos terminen antes de continuar
         entrada.join();
-        personasEntraron = false;
+        personasEntraron = false; // indica que ya entraron todas las personas y el hilo ya finalizó.
         salida.join();
 
         // Se muestra por pantalla el número final de personas en el jardín
